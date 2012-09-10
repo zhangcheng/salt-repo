@@ -1,0 +1,9 @@
+deb http://mirrors.163.com/ubuntu/ precise main restricted
+deb http://mirrors.163.com/ubuntu/ precise-updates main restricted
+deb http://mirrors.163.com/ubuntu/ precise-backports main restricted
+deb http://mirrors.163.com/ubuntu/ precise-security main restricted
+
+deb http://mirrors.163.com/ubuntu/ precise universe
+deb http://mirrors.163.com/ubuntu/ precise-updates universe
+deb http://mirrors.163.com/ubuntu/ precise-backports universe
+deb http://mirrors.163.com/ubuntu/ precise-security universe
