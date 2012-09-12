@@ -1,0 +1,7 @@
+check process jboss-as with pidfile /var/run/jboss-as/jboss-as-standalone.pid
+    start program = "/etc/init.d/jboss-as start"
+    stop program  = "/etc/init.d/jboss-as stop"
+    if failed host localhost port 9990 protocol http then restart
+    if 3 restarts within 5 cycles then timeout
+    group server
+
