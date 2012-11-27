@@ -8,7 +8,7 @@ default:
       - aptitude
       - build-essential
       - etckeeper
-      - git-core
+      - git
       - htop
       - linux-headers-virtual
       - linux-image-virtual
@@ -25,6 +25,7 @@ default-removed:
   pkg:
     - removed
     - names:
+      - git-core
       - linux-headers-server
       - linux-image-server
       - linux-server
