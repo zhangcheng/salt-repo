@@ -6,6 +6,7 @@ default:
     - latest
     - names:
       - aptitude
+      - build-essential
       - etckeeper
       - git-core
       - htop
