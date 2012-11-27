@@ -15,6 +15,7 @@ default:
       - linux-virtual
       - logrotate
       - realpath
+      - salt-minion
       - sudo
       - tmux
     - require:
