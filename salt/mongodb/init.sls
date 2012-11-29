@@ -41,7 +41,7 @@ mongo-dirs:
     - source: salt://mongodb/files/mongodb.conf
     - template: jinja
     - context:
-        replSet: set_a
+        replSet: inhouse
     - require:
       - pkg: mongodb
 
