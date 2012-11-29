@@ -30,7 +30,6 @@ include:
 /etc/apt/sources.list.d:
   file:
     - directory
-    - clean: True
     - require:
       - file: /etc/apt/sources.list.d/saltstack.list
 
