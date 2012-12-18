@@ -2,3 +2,4 @@ base:
   '*':
     - apt
     - default
+    - customize
