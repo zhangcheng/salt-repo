@@ -1,0 +1,8 @@
+server {
+    listen 8000;
+
+    server_name miaomiao.mamabang.com;
+    access_log off;
+
+    root /mnt/gfs-static/sites/miaomiao;
+}

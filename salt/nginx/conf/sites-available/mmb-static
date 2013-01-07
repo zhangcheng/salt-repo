@@ -1,15 +1,16 @@
 server {
-    listen 8000;
+    listen 8000 default_server;
 
     open_file_cache max=1000 inactive=300s;
     open_file_cache_valid 360s;
     open_file_cache_min_uses 2;
     open_file_cache_errors off;
-                
+
+    access_log off;
+
     location ~ ^/upload/(.*)$ {
 #       alias /home/ops/jboss-as-7.1.1.Final/standalone/deployments/upload.war/$1;
         alias /mnt/gfs-static/$1;
-        access_log off;
         expires max;
     }
 }
