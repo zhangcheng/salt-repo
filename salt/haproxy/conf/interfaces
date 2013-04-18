@@ -1,0 +1,74 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+	address 10.10.10.21
+	netmask 255.255.255.0
+#	gateway 10.10.10.1
+#	dns-nameservers 199.91.73.222 178.79.131.110
+
+auto eth1
+iface eth1 inet static
+        ################################
+        # standard network configuration
+        ################################
+        address 10.10.1.21
+        netmask 255.255.255.0
+
+        ################################
+        # ucarp configuration
+        ################################
+        # vid : The ID of the virtual server [1-255]
+        ucarp-vid 1
+        # vip : The virtual address
+        ucarp-vip 180.168.36.241
+        # password : A password used to encrypt Carp communications
+        ucarp-password secret
+        # advskew : Advertisement skew [1-255]
+        ucarp-advskew 1
+        # advbase : Interval in seconds that advertisements will occur
+        ucarp-advbase 1
+        # master : determine if this server is the master
+        ucarp-master yes
+
+# The carp network interface, on top of eth1
+iface eth1:ucarp inet static
+        address 180.168.36.241
+        netmask 255.255.255.224
+        gateway 180.168.36.225
+        dns-nameservers 199.91.73.222 178.79.131.110
+
+auto eth2
+iface eth2 inet static
+        ################################
+        # standard network configuration
+        ################################
+        address 10.10.2.21
+        netmask 255.255.255.0
+
+        ################################
+        # ucarp configuration
+        ################################
+        # vid : The ID of the virtual server [1-255]
+        ucarp-vid 2
+        # vip : The virtual address
+        ucarp-vip 101.44.13.106
+        # password : A password used to encrypt Carp communications
+        ucarp-password secret
+        # advskew : Advertisement skew [1-255]
+        ucarp-advskew 1
+        # advbase : Interval in seconds that advertisements will occur
+        ucarp-advbase 1
+        # master : determine if this server is the master
+        ucarp-master yes
+
+# The carp network interface, on top of eth2
+iface eth2:ucarp inet static
+        address 101.44.13.106
+        netmask 255.255.255.224
