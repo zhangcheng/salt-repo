@@ -1,14 +1,6 @@
 include:
   - saltstack.apt
 
-/etc/apt/preferences.d/99local:
-  file:
-    - managed
-    - source: salt://apt/preferences.conf
-    - user: root
-    - group: root
-    - mode: 644
-
 /etc/apt/apt.conf.d/99local:
   file:
     - managed
@@ -38,7 +30,6 @@ apt-update:
     - run
     - name: apt-get update
     - require:
-      - file: /etc/apt/preferences.d/99local
       - file: /etc/apt/apt.conf.d/99local
       - file: /etc/apt/sources.list
       - file: /etc/apt/sources.list.d
