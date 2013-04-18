@@ -28,6 +28,8 @@ default-removed:
       - git-core
       - linux-headers-server
       - linux-image-server
+      - linux-headers-generic
+      - linux-image-generic
       - linux-server
       - memtest86+
       - ubuntu-standard
