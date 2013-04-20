@@ -14,7 +14,7 @@
     - mode: 644
     - source: salt://locales/supported.d/local
 
-locale-gen:
+locale-gen --purge:
   cmd.run:
     - require:
       - file: /var/lib/locales/supported.d/local
